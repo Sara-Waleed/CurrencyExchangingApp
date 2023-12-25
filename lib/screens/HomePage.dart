@@ -13,27 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     String dropdownValue = 'Dog';
-    return Scaffold(
-      appBar: AppBar(
-        title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            Icon(Icons.loop,color: Colors.black,),
-            SizedBox(width: 5,),
-            Text(
-              "Currency",
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight:FontWeight.bold,
-                fontSize: 25
-              ),
-            ),
-          ],
-        ),
-
-        elevation: 0.0,
-      ),
-      body: Padding(
+    return Padding(
         padding: const EdgeInsets.only(right: 10.0,left: 10,top: 25,bottom: 10),
         child: Column(
           children: [
@@ -85,55 +65,52 @@ class _HomePageState extends State<HomePage> {
               children: [
                 HeadLineTitle(title: "Currency:"),
                SizedBox(height: 5,),
-                SizedBox(
-                  height: 460,
-                  width: double.infinity,
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                  itemBuilder:(context, index) =>  Container(
-                    width: double.infinity,
-                    height: 55,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey.shade300
-                    ),
-                    child:
-// Step 2.
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: DropdownButton<String>(
-                        // Step 3.
-                        value: dropdownValue,
-                        // Step 4.
-                        items: <String>['Dog', 'Cat', 'Tiger', 'Lion']
-                            .map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(
-                              value,
-                              style: TextStyle(fontSize: 30),
-                            ),
-                          );
-                        }).toList(),
-                        // Step 5.
-                        onChanged: (String? newValue) {
-                          setState(() {
-                            dropdownValue = newValue!;
-                          });
-                        },
+                 Expanded(
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                    itemBuilder:(context, index) =>  Container(
+                      width: double.infinity,
+                      height: 55,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.grey.shade300
                       ),
-                    ),
-                  ) ,
-                  separatorBuilder: (context, index) => Divider(height: 10,),
-                  itemCount: 10),
-                )
-
+                      child:
+// Step 2.
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: DropdownButton<String>(
+                          // Step 3.
+                          value: dropdownValue,
+                          // Step 4.
+                          items: <String>['Dog', 'Cat', 'Tiger', 'Lion']
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(
+                                value,
+                                style: TextStyle(fontSize: 30),
+                              ),
+                            );
+                          }).toList(),
+                          // Step 5.
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              dropdownValue = newValue!;
+                            });
+                          },
+                        ),
+                      ),
+                    ) ,
+                    separatorBuilder: (context, index) => Divider(height: 10,),
+                    itemCount: 10),
+                  ),
               ],
             ),
           ],
         ),
-      ),
-    );
+      );
+
   }
 }
 
