@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/CurrencyValueField.dart';
 import '../widgets/Exchaning_Process.dart';
-import '../widgets/MyDropdownButton.dart';
 import '../widgets/ResultContainer.dart';
 
 class App extends StatefulWidget {
@@ -14,6 +12,8 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   TextEditingController controllerr =TextEditingController();
+   String inputValue='';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,11 +31,18 @@ class _AppState extends State<App> {
                   fontWeight: FontWeight.bold
               ),),
               SizedBox(height: 60,),
-              CurrencyValueField(controllerr: controllerr),
+              CurrencyValueField(
+                controller: controllerr,
+                onChanged: (value) {
+                  setState(() {
+                    inputValue = value;
+                  });
+                },
+              ),
               SizedBox(height: 40,),
               Exchaning_Process(),
               SizedBox(height: 40,),
-              ResultContainer(),
+              ResultContainer(text:inputValue.isEmpty ? 'Result' :inputValue,),
             ],
           ),
         ),

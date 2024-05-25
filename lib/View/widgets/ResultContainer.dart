@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class ResultContainer extends StatelessWidget {
 
-  final String text="Result";
+  final String text;
   const ResultContainer({
     super.key,
+    required this.text
   });
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +19,6 @@ class ResultContainer extends StatelessWidget {
       ),
       width: double.infinity,
       height: 200,
-
-
       child: Center(child: Text(text)),);
   }
 }
