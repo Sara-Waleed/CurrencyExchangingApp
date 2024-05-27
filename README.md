@@ -1,7 +1,10 @@
 # currenyexchanging
 
 A new Flutter project.
-
+![WhatsApp Image 2024-05-27 at 18 46 08_5acc6078](https://github.com/Sara-Waleed/CurrencyExchangingApp/assets/92535228/612fb42b-15ce-48a9-ba16-569e58ae0b54)
+![2](https://github.com/Sara-Waleed/CurrencyExchangingApp/assets/92535228/ea99e23b-dfa7-437e-bb5f-fefd245c7692)
+![3](https://github.com/Sara-Waleed/CurrencyExchangingApp/assets/92535228/62693f91-b868-402f-8d91-69d086ce8e02)
+![4](https://github.com/Sara-Waleed/CurrencyExchangingApp/assets/92535228/9c6efcb1-8446-4f8e-9658-f74783d123fc)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
