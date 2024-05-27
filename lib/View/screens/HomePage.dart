@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import '../widgets/CurrencyValueField.dart';
+import '../widgets/MyDropdownButton.dart';
 import '../widgets/ResultContainer.dart';
 
 
@@ -12,8 +13,10 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-TextEditingController controller=TextEditingController();
-  @override
+TextEditingController controller = TextEditingController();
+String fromCurrency = ''; // Added variable to track the "From" currency
+String toCurrency = '';
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
@@ -39,19 +42,31 @@ TextEditingController controller=TextEditingController();
                 },
               ),
               SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children:[
-                  Text("From:"),
-             ] ),
-              SizedBox(height: 40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("To:"),
 
-                ],
-              ),
+                  DropdownRow(
+                    label: "From:", // Added label for "From" dropdown
+                    value: fromCurrency, // Pass the variable to track "From" currency
+                    currencies: {}, // Pass the currencies map
+                    onChanged: (value) {
+                      setState(() {
+                        fromCurrency = value!;
+                      });
+                    },
+                  ),
+
+              SizedBox(height: 40),
+
+                  DropdownRow(
+                    label: "To:", // Added label for "To" dropdown
+                    value: toCurrency, // Pass the variable to track "To" currency
+                    currencies: {}, // Pass the currencies map
+                    onChanged: (value) {
+                      setState(() {
+                        toCurrency = value!;
+                      });
+                    },
+                  ),
+
               SizedBox(height: 40,),
               ElevatedButton(
                 onPressed: (){},
