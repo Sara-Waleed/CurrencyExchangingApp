@@ -1,30 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-class CurrencyValueField extends StatelessWidget {
-  final TextEditingController controller;
-  final ValueChanged<String> onChanged;
-
-  const CurrencyValueField({
-    Key? key,
-    required this.controller,
-    required this.onChanged,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      keyboardType: TextInputType.number,
-      decoration: InputDecoration(
-        hintText: "Input valid value",
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-      ),
-      onChanged: onChanged,
-    );
-  }
-}
+// class CurrencyValueField extends StatelessWidget {
+//   final TextEditingController controller;
+//   final ValueChanged<String> onChanged;
+//
+//   const CurrencyValueField({
+//     Key? key,
+//     required this.controller,
+//     required this.onChanged,
+//   }) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return TextFormField(
+//       controller: controller,
+//       keyboardType: TextInputType.number,
+//       decoration: InputDecoration(
+//         hintText: "Input valid value",
+//         border: OutlineInputBorder(
+//           borderRadius: BorderRadius.circular(10),
+//         ),
+//       ),
+//       onChanged: onChanged,
+//     );
+//   }
+// }
 // class CurrencyValueField extends StatelessWidget {
 //   const CurrencyValueField({
 //     super.key,
@@ -53,3 +53,22 @@ class CurrencyValueField extends StatelessWidget {
 //     );
 //   }
 // }
+class CurrencyValueField extends StatelessWidget {
+  final TextEditingController controller;
+  final Function(String) onChanged;
+
+  CurrencyValueField({required this.controller, required this.onChanged});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(
+        labelText: 'Enter value',
+        border: OutlineInputBorder(),
+      ),
+      keyboardType: TextInputType.number,
+      onChanged: onChanged,
+    );
+  }
+}

@@ -18,7 +18,7 @@ class ResultContainer extends StatelessWidget {
         borderRadius: BorderRadiusDirectional.circular(20),
       ),
       width: double.infinity,
-      height: 200,
+      height: 150,
       child: Center(child: Text(text)),);
   }
 }
