@@ -10,8 +10,7 @@ String allCurrenciesToJson(Map<String, String> data) =>
 //*************
 
 
-RatesModel ratesModelFromJson(String str) =>
-    RatesModel.fromJson(json.decode(str));
+RatesModel ratesModelFromJson(String str) => RatesModel.fromJson(json.decode(str));
 
 String ratesModelToJson(RatesModel data) => json.encode(data.toJson());
 

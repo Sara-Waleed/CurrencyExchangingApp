@@ -43,3 +43,4 @@ Future<Map> fetchCurrencies() async {
         'Please switch on your mobile data and restart the app.');
   }
 }
+
